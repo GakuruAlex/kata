@@ -2,7 +2,7 @@ import pytest
 from tower_builder import tower_builder
 
 @pytest.mark.parametrize("a, expected", [
-    (3,[
+    (3, [
   "  *  ",
   " *** ",
   "*****"]),
