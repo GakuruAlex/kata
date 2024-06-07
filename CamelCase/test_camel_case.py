@@ -1,4 +1,3 @@
-import pytest
 from camel_case import to_camel_case,to_camel_case_2
 
 class TestToCamelCaseWithDash:
