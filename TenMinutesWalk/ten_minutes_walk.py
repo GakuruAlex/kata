@@ -8,7 +8,9 @@ def is_valid_walk(walk):
         _bool_: _True or False based on path validity_
     """
     walks_count = {}
+    bool_walks = []
     opposites ={"n":"s","s":"n","e":"w","w":"e"}
+    
     if len(walk) != 10:
         return False
     else:
@@ -21,8 +23,14 @@ def is_valid_walk(walk):
             for w in walks_count.keys():
                 try:
                     if walks_count[w] == walks_count[opposites[w]]:
-                        return True
+                        bool_walks.append(True)
                     else:
-                        return False
+                        bool_walks.append(False)
                 except KeyError:
                     return False
+            return False not in bool_walks
+        
+
+#optimal soln
+def is_valid_walk_soln(walk):
+    return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')
